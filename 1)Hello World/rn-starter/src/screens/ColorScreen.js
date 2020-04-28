@@ -5,7 +5,7 @@ const ColorScreen = () => {
   const [colors, setColors] = useState([]);
   console.log(colors);
 
-  return (
+  return ( 
     <View>
       <Button
         title="Add a Color"
