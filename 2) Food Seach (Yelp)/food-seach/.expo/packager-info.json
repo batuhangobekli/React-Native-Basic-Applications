@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19003,
+  "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 24345,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "packagerPid": 1530,
+  "expoServerNgrokUrl": "https://rw-qms.anonymous.food-seach.exp.direct",
+  "packagerNgrokUrl": "https://packager.rw-qms.anonymous.food-seach.exp.direct",
+  "ngrokPid": 1551
 }
