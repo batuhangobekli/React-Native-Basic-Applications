@@ -1,8 +1,19 @@
 import React from "react";
-import { View, StyleSheet, Text, FlatList } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import ResultsDetail from "./ResultsDetail";
+import { withNavigation } from "react-navigation";
 
-const ResultsList = ({ title, results }) => {
+const ResultsList = ({ title, results, navigation }) => {
+  if (!results.length) {
+    return null;
+  }
+  
   return (
     <View style={styles.container}>
       <Text style={styles.titleStyle}>{title}</Text>
@@ -12,7 +23,15 @@ const ResultsList = ({ title, results }) => {
         showsHorizontalScrollIndicator={false}
         keyExtractor={(result) => result.id}
         renderItem={({ item }) => {
-          return <ResultsDetail result={item}></ResultsDetail>;
+          return (
+            <TouchableOpacity
+              onPress={
+                () => navigation.navigate("ResultsShow", { id: item.id }) //Navigate to Result Screen and send clicked "restaurant id"
+              }
+            >
+              <ResultsDetail result={item}></ResultsDetail>
+            </TouchableOpacity>
+          );
         }}
       />
     </View>
@@ -22,7 +41,7 @@ const ResultsList = ({ title, results }) => {
 const styles = StyleSheet.create({
   titleStyle: {
     marginLeft: 15,
-    fontSize: 18,
+    fontSize: 19,
     fontWeight: "bold",
     marginBottom: 5,
   },
@@ -31,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ResultsList;
+export default withNavigation(ResultsList);
