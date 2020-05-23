@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19004,
+  "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 31799,
+  "packagerPid": 34562,
   "expoServerNgrokUrl": "https://87-437.anonymous.guess-the-number.exp.direct",
   "packagerNgrokUrl": "https://packager.87-437.anonymous.guess-the-number.exp.direct",
-  "ngrokPid": 31809
+  "ngrokPid": 34572
 }
