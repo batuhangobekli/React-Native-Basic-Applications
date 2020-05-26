@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import * as Font from "expo-font";
+import { AppLoading } from "expo";
+
 import Header from "./components/Header";
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
 import GameOverScreen from "./screens/GameOverScreen";
-import * as Font from "expo-font";
-import { AppLoading } from "expo";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -36,7 +37,6 @@ export default function App() {
 
   const startGameHandler = (selectedNumber) => {
     setUserNumber(selectedNumber);
-    setGuessRounds(0);
   };
 
   const gameOverHandler = (numOfRounds) => {
@@ -52,8 +52,8 @@ export default function App() {
   } else if (guessRounds > 0) {
     content = (
       <GameOverScreen
-        userNumber={userNumber}
         roundsNumber={guessRounds}
+        userNumber={userNumber}
         onRestart={configureNewGameHandler}
       />
     );
@@ -61,7 +61,7 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      <Header title='Guess a Number'></Header>
+      <Header title='Guess a Number' />
       {content}
     </View>
   );
