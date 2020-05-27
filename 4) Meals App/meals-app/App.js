@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Text, View } from "react-native";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import MealsNavigator from "./navigation/MealsNavigator";
 import "react-native-gesture-handler";
+import { enableScreens } from "react-native-screens";
 
 const fetchFonts = () => {
   return Font.loadAsync({
