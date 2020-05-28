@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
+import { createDrawerNavigator } from "react-navigation-drawer";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryMealsScreen from "../screens/CategoryMealsScreen";
@@ -9,6 +10,14 @@ import MealDetailScreen from "../screens/MealDetailScreen";
 import { Platform } from "react-native";
 import Colors from "../constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
+
+const defaultStackNavOptions = {
+  headerStyle: {
+    backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "",
+  },
+  headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor,
+  headerTitle: "A Screen",
+};
 
 const MealsNavigator = createStackNavigator(
   {
@@ -21,15 +30,22 @@ const MealsNavigator = createStackNavigator(
     MealDetail: MealDetailScreen,
   },
   {
-    // initialRouteName: 'Categories',
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "",
-      },
-      headerTintColor:
-        Platform.OS === "android" ? "white" : Colors.primaryColor,
-      headerTitle: "A Screen",
+    defaultNavigationOptions: defaultStackNavOptions,
+  }
+);
+
+const FavouritesNavigator = createStackNavigator(
+  {
+    Favorites: {
+      screen: FavouritesScreen,
     },
+    MealDetail: {
+      screen: MealDetailScreen,
+    },
+  },
+  {
+    // initialRouteName: 'Categories',
+    defaultNavigationOptions: defaultStackNavOptions,
   }
 );
 
@@ -50,7 +66,7 @@ const MealsFavTabNavigator = createBottomTabNavigator(
       },
     },
     Favorites: {
-      screen: FavouritesScreen,
+      screen: FavouritesNavigator,
       navigationOptions: {
         tabBarIcon: (tabInfo) => {
           return (
@@ -70,5 +86,7 @@ const MealsFavTabNavigator = createBottomTabNavigator(
     },
   }
 );
+
+const MainNavigator = createD;
 
 export default createAppContainer(MealsFavTabNavigator);
