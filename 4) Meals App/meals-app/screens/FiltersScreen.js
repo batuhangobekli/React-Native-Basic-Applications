@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Switch, Platform } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/CustomHeaderButton";
 import Colors from "../constants/Colors";
+import { useDispatch } from "react-redux";
+import { setFilters } from "../store/actions/meals";
 
 const FilterSwitch = (props) => {
   return (
@@ -25,6 +27,8 @@ const FiltersScreen = (props) => {
   const [isVegan, setIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
 
+  const dispatch = useDispatch();
+
   const saveFilters = useCallback(() => {
     const appliedFilters = {
       glutenFree: isGlutenFree,
@@ -33,7 +37,7 @@ const FiltersScreen = (props) => {
       isVegetarian: isVegetarian,
     };
 
-    console.log(appliedFilters);
+    dispatch(setFilters(appliedFilters));
   }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]); //If any of value change create again
 
   useEffect(() => {
