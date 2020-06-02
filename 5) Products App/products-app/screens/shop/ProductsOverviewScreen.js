@@ -38,7 +38,7 @@ ProductsOverviewScreen.navigationOptions = {
   headerTitle: "All Products",
   headerRight: (
     <HeaderButtons HeaderButtonComponent={HeaderButton}>
-      <Item></Item>
+      <Item title='Cart' iconName={}></Item>
     </HeaderButtons>
   ),
 };
