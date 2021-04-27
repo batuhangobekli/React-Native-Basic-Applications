@@ -10,7 +10,7 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "@react-native-community/masked-view": "^0.1.5",
+    "@react-native-community/masked-view": "^0.1.11",
     "expo": "~36.0.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
