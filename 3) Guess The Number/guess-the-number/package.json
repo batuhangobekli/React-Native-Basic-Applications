@@ -10,13 +10,13 @@
     "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "expo": "~37.0.3",
+    "expo": "~39.0.1",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
     "react-native-web": "~0.11.7",
     "expo-font": "~8.1.0",
-    "snyk": "^1.332.0"
+    "snyk": "^1.465.0"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.1.0",
