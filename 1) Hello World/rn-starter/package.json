@@ -21,7 +21,7 @@
     "react-native-screens": "2.0.0-alpha.12",
     "react-navigation": "^4.1.0",
     "react-navigation-stack": "^2.0.16",
-    "snyk": "^1.332.0"
+    "snyk": "^1.1040.0"
   },
   "devDependencies": {
     "babel-preset-expo": "~8.0.0",
